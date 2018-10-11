@@ -13,3 +13,7 @@ RUN \
         ./install -destinationFolder /opt/mcr -agreeToLicense yes -mode silent
 RUN \
         rm -rf /mcr-install
+
+FROM debian:9
+
+COPY --from=matlab /opt/mcr /opt/mcr
